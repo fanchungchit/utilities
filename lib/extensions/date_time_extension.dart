@@ -14,6 +14,10 @@ extension DateTimeExtension on DateTime {
 
   DateTime end() => DateTime(year, month, day, 23, 59, 59);
 
+  DateTime date() => DateTime(year, month, day);
+
+  DateTime time() => DateTime(0, 0, 0, hour, minute, second);
+
   bool isWithin([DateTime? date]) {
     final result = date ?? DateTime.now();
     return isAfter(result.start()) && isBefore(result.end());
